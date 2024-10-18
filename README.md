@@ -30,7 +30,7 @@ Follow these steps to set up the environment and run the training:
     ```bash
     python image_train.py --image_size 32 --num_channels 64 --num_res_blocks 2 --diffusion_steps 1000 --noise_schedule linear --lr 1e-4 --batch_size 8 --microbatch 4
     ```
-
+    
     Explanation of the Key Flags:
     --image_size 32: Specifies the resolution of the images in the dataset (CIFAR-10 images are 32x32 pixels).
     --num_channels 64: The number of channels in the first convolutional layer of the model.
@@ -40,6 +40,7 @@ Follow these steps to set up the environment and run the training:
     --lr 1e-4: Learning rate for the optimizer.
     --batch_size 8: Batch size for training.
     --microbatch 4: Smaller micro-batches to manage memory better on single-CPU machines.
+
 
 5. **Results and Logging**
     As mentioned earlier, I trained the model for 30,000 steps. The training loop outputs a number of metrics, including:
