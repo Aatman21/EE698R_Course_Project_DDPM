@@ -4,16 +4,16 @@ Train a diffusion model on images.
 
 import argparse
 
-from improved_diffusion import dist_util, logger
-from improved_diffusion.image_datasets import load_data
-from improved_diffusion.resample import create_named_schedule_sampler
-from improved_diffusion.script_util import (
+from diffusion import dist_util, logger
+from diffusion.image_datasets import load_data
+from diffusion.resample import create_named_schedule_sampler
+from diffusion.script_util import (
     model_and_diffusion_defaults,
     create_model_and_diffusion,
     args_to_dict,
     add_dict_to_argparser,
 )
-from improved_diffusion.train_util import TrainLoop
+from diffusion.train_util import TrainLoop
 
 
 def main():
