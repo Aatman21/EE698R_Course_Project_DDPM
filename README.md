@@ -32,14 +32,14 @@ Follow these steps to set up the environment and run the training:
     ```
 
     Explanation of the Key Flags:
-    image_size 32: Specifies the resolution of the images in the dataset (CIFAR-10 images are 32x32 pixels).
-    num_channels 64: The number of channels in the first convolutional layer of the model.
-    num_res_blocks 2: The number of residual blocks in each layer of the model.
-    diffusion_steps 1000: The number of steps in the diffusion process.
-    noise_schedule linear: The type of noise schedule to use (linear).
-    lr 1e-4: Learning rate for the optimizer.
-    batch_size 8: Batch size for training.
-    microbatch 4: Smaller micro-batches to manage memory better on single-CPU machines.
+    --image_size 32: Specifies the resolution of the images in the dataset (CIFAR-10 images are 32x32 pixels).
+    --num_channels 64: The number of channels in the first convolutional layer of the model.
+    --num_res_blocks 2: The number of residual blocks in each layer of the model.
+    --diffusion_steps 1000: The number of steps in the diffusion process.
+    --noise_schedule linear: The type of noise schedule to use (linear).
+    --lr 1e-4: Learning rate for the optimizer.
+    --batch_size 8: Batch size for training.
+    --microbatch 4: Smaller micro-batches to manage memory better on single-CPU machines.
 
 5. **Results and Logging**
     As mentioned earlier, I trained the model for 30,000 steps. The training loop outputs a number of metrics, including:
