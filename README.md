@@ -30,7 +30,7 @@ Follow these steps to set up the environment and run the training:
     ```bash
     python image_train.py --image_size 32 --num_channels 64 --num_res_blocks 2 --diffusion_steps 1000 --noise_schedule linear --lr 1e-4 --batch_size 8 --microbatch 4
     ```
-    
+
     - `--image_size 32`: Specifies the resolution of the images in the dataset (CIFAR-10 images are 32x32 pixels).
 
     - `--num_channels 64`: The number of channels in the first convolutional layer of the model.
@@ -52,9 +52,14 @@ Follow these steps to set up the environment and run the training:
 5. **Results and Logging**
     As mentioned earlier, I trained the model for 30,000 steps. The training loop outputs a number of metrics, including:
 
+    ## Results
+    https://drive.google.com/file/d/1aQUMJLSDcSHhdPNt-WDwZd0R-9ZpKhck/view?usp=sharing
+    
+    ## Logging
     grad_norm: Gradient norm to monitor gradient updates.
     loss: Overall loss of the model.
     mse: Mean Squared Error over the generated samples.
-    These metrics are saved at each checkpoint and logged into the results.xlsx file in this repository. You can access it for detailed insights into how the training evolved over time via this link : 
+    These metrics are saved at each checkpoint and logged into the results.xlsx file in this repository. You can access it for detailed insights into how the training evolved over time via this link : https://drive.google.com/file/d/1XSnYxxza0OAgzm73hh0pcNUkyoqt6g98/view?usp=sharing
+
 
 
