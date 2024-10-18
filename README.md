@@ -23,7 +23,7 @@ Follow these steps to set up the environment and run the training:
     pip install -e .
 
 3. **Data Preparation**:
-    Download the dataset from this link : 
+    Run the file named cifar10.py under the dataset folder and it will generate the train and test split data used for training and testing.
 
 4. **Running the Model**
     To initiate the training process, navigate to the scripts directory and run the image_train.py file with the following command:
