@@ -29,6 +29,7 @@ Follow these steps to set up the environment and run the training:
     To initiate the training process, navigate to the scripts directory and run the image_train.py file with the following command:
     ```bash
     python image_train.py --image_size 32 --num_channels 64 --num_res_blocks 2 --diffusion_steps 1000 --noise_schedule linear --lr 1e-4 --batch_size 8 --microbatch 4
+    ```
 
     Explanation of the Key Flags:
     image_size 32: Specifies the resolution of the images in the dataset (CIFAR-10 images are 32x32 pixels).
