@@ -14,8 +14,7 @@ Follow these steps to set up the environment and run the training:
 
 1. **Clone the Repository**:
    ```bash
-   git clone <your-repo-url>
-   cd <your-repo-directory>
+   git clone https://github.com/Aatman21/EE698R_Course_Project_DDPM.git
 
 2. **Set Up the Environment**: 
     Install the necessary dependencies by running:
