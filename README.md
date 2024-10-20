@@ -49,7 +49,8 @@ Follow these steps to set up the environment and run the training:
 
 ## Results
 As mentioned earlier, I trained the model for 30,000 steps. The training loop outputs a number of metrics, including:
-https://drive.google.com/file/d/1aQUMJLSDcSHhdPNt-WDwZd0R-9ZpKhck/view?usp=sharing
+https://drive.google.com/file/d/1aQUMJLSDcSHhdPNt-WDwZd0R-9ZpKhck/view?usp=sharing.
+I have shared the implementation details of the model in this link: https://drive.google.com/file/d/14uiZldN9xbmFjf9_301x3G5XXTrydN9a/view?usp=sharing
 
 ## Logging
 grad_norm: Gradient norm to monitor gradient updates.
