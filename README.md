@@ -73,6 +73,10 @@ For `results_lin_sched`
 https://drive.google.com/file/d/1G30y9nGM1ri6LyDByNwJiKn6fdXzHwpt/view?usp=sharing
 
 For `results_poly_sched`
+
 https://drive.google.com/file/d/1dC-HwUu8jJ6ElTURb9nJvHUKtXE4hsrI/view?usp=sharing
 
 
+## Poster
+Here is the link to the poster:
+https://drive.google.com/file/d/1U8G8N2eDSN_nRLabvHZ0j5U9_7fN6X2M/view?usp=sharing
