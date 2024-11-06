@@ -6,7 +6,9 @@ This repository contains the implementation of the Denoising Diffusion Probabili
 
 - **Optimized for single-CPU training**: The original implementation is designed for distributed GPU training. I have adapted the codebase to run efficiently on a single CPU setup by adjusting the batch size, micro-batching, and memory handling processes. This allows the model to be trained on lower-end machines without requiring large-scale hardware setups.
   
-- **Results after 20,000 steps**: I trained the model for 30,000 steps and achieved the following metrics, which are saved in the attached `results_lin_sched.xlsx` file also I have trained the model with the polynomial variance which I have attached with the name `results_poly_sched.xlsx`. This includes gradients, loss functions, MSE values, and more, detailed across multiple checkpoints during training.
+- **Results after 20,000 steps**: I trained the model for 20,000 steps and achieved the following metrics, which are saved in the attached `results_lin_sched.xlsx` file also I have trained the model with the polynomial variance which I have attached with the name `results_poly_sched.xlsx`. This includes gradients, loss functions, MSE values, and more, detailed across multiple checkpoints during training.
+
+- **Polynomial Scheduler**: The polynomial variance scheduler introduces a more flexible control mechanism over the noise accumulation during the forward diffusion process. Unlike the linear schedule, which distributes noise evenly over time, the polynomial scheduler can be fine-tuned to either slow down or accelerate the rate of noise addition. 
 
 ## Installation
 
@@ -66,9 +68,11 @@ grad_norm: Gradient norm to monitor gradient updates.
 loss: Overall loss of the model.
 mse: Mean Squared Error over the generated samples.
 These metrics are saved at each checkpoint and logged into the results.xlsx file in this repository. You can access it for detailed insights into how the training evolved over time via this link : 
-For results_lin_sched
+
+For `results_lin_sched`
 https://drive.google.com/file/d/1XSnYxxza0OAgzm73hh0pcNUkyoqt6g98/view?usp=sharing
-For results_poly_sched
+
+For `results_poly_sched`
 
 
 
