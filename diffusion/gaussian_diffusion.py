@@ -1,10 +1,3 @@
-"""
-This code started out as a PyTorch port of Ho et al's diffusion models:
-https://github.com/hojonathanho/diffusion/blob/1e0dceb3b3495bbe19116a5e1b3596cd0706c543/diffusion_tf/diffusion_utils_2.py
-
-Docstrings have been added, as well as DDIM sampling and a new collection of beta schedules.
-"""
-
 import enum
 import math
 
@@ -13,6 +6,10 @@ import torch as th
 
 from .nn import mean_flat
 from .losses import normal_kl, discretized_gaussian_log_likelihood
+from .poly_sched import AdaptivePolynomialSchedule  # Import from the new module
+
+
+
 
 
 def get_named_beta_schedule(schedule_name, num_diffusion_timesteps):
@@ -34,12 +31,31 @@ def get_named_beta_schedule(schedule_name, num_diffusion_timesteps):
             beta_start, beta_end, num_diffusion_timesteps, dtype=np.float64
         )
     elif schedule_name == "cosine":
+        # Existing cosine schedule
         return betas_for_alpha_bar(
             num_diffusion_timesteps,
             lambda t: math.cos((t + 0.008) / 1.008 * math.pi / 2) ** 2,
         )
+    elif schedule_name == "polynomial":
+        # New Polynomial schedule implementation
+        return polynomial_noise_schedule(num_diffusion_timesteps, p=2)  # Default p=2
     else:
         raise NotImplementedError(f"unknown beta schedule: {schedule_name}")
+
+def polynomial_noise_schedule(num_diffusion_timesteps, p=2):
+    """
+    Create a polynomial beta schedule.
+
+    :param num_diffusion_timesteps: Total number of timesteps.
+    :param p: Power to control the nonlinearity of the schedule (default is 2).
+    :return: A 1-D numpy array of beta values.
+    """
+    # Generate beta values using a polynomial schedule
+    betas = [(t / num_diffusion_timesteps) ** p for t in range(num_diffusion_timesteps)]
+    betas = np.array(betas, dtype=np.float64)
+    # Ensure values are within the range [0, 1]
+    betas = np.clip(betas, 0, 0.999)
+    return betas
 
 
 def betas_for_alpha_bar(num_diffusion_timesteps, alpha_bar, max_beta=0.999):
@@ -167,6 +183,11 @@ class GaussianDiffusion:
             * np.sqrt(alphas)
             / (1.0 - self.alphas_cumprod)
         )
+
+    def schedule_transformation(self, schedule):
+        transformed = self.scaler.scale_values(schedule)
+        stabilized = self.gradient_stabilizer.stabilize(transformed)
+        verified_summary = self.schedule_verifier.generate_summary()
 
     def q_mean_variance(self, x_start, t):
         """
