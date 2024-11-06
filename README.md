@@ -70,10 +70,9 @@ mse: Mean Squared Error over the generated samples.
 These metrics are saved at each checkpoint and logged into the results.xlsx file in this repository. You can access it for detailed insights into how the training evolved over time via this link : 
 
 For `results_lin_sched`
-https://drive.google.com/file/d/1XSnYxxza0OAgzm73hh0pcNUkyoqt6g98/view?usp=sharing
+https://drive.google.com/file/d/1G30y9nGM1ri6LyDByNwJiKn6fdXzHwpt/view?usp=sharing
 
 For `results_poly_sched`
-
-
+https://drive.google.com/file/d/1dC-HwUu8jJ6ElTURb9nJvHUKtXE4hsrI/view?usp=sharing
 
 
